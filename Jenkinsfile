@@ -3,19 +3,19 @@ pipeline {
     stages {
         stage('GetProject') {
             steps {
-                git 'https://github.com/DaithiMull/Davids_petitions.git'
+                git 'https://github.com/DaithiMull/Davidspetitions.git'
             }
         }
-        stage('build') {
+        stage('Build') { // Capitalized 'Build' for clarity
             steps {
-                sh 'mvn clean:clean'
-                sh 'mvn dependency:copy-dependencies'
-                sh 'mvn compiler:compile'
+                sh 'mvn clean install' // Use clean install instead of separate steps
             }
         }
-        stage('Exec') {
+        stage('Exec') { // Capitalized 'Exec' for clarity
             steps {
-                sh 'mvn exec:java'
+                script { // Use script block for better control
+                    sh 'mvn exec:java -Dexec.mainClass=com.example.Davidspetitions.DavidspetitionsApplication'
+                }
             }
         }
     }
