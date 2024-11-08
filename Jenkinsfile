@@ -6,31 +6,28 @@ pipeline {
                 git 'https://github.com/DaithiMull/Davidspetitions.git'
             }
         }
-        stage('Build') { // Capitalized 'Build' for clarity
+        stage('Build') {
             steps {
-                sh 'mvn clean install' // Use clean install instead of separate steps
+                sh 'mvn clean install'
             }
         }
-
         stage('Package') {
-                    steps {
-                        sh 'mvn package'
-                    }
-                }
-
-        stage('Exec') { // Capitalized 'Exec' for clarity
             steps {
-                script { // Use script block for better control
+                sh 'mvn package'
+            }
+        }
+        stage('Exec') {
+            steps {
+                script {
                     sh 'mvn exec:java -Dexec.mainClass=com.example.Davidspetitions.DavidspetitionsApplication'
                 }
             }
         }
-
-        post{
-                    success{
-                        archiveArtifacts allowEmptyArchive: true,
-                            artifacts:'**/Davidspetitions*.war'
-                    }
-                    }
+    }
+    post {
+        success {
+            archiveArtifacts allowEmptyArchive: true,
+                artifacts:'**/Davidspetitions*.war'
+        }
     }
 }
