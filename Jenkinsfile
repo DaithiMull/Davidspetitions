@@ -24,7 +24,7 @@ pipeline {
             }
         }
     }
-    post {
+    stage {
         success {
             archiveArtifacts allowEmptyArchive: true,
                 artifacts:'**/Davidspetitions*.war'
