@@ -25,5 +25,11 @@ pipeline {
                 }
             }
         }
+         post{
+                    success{
+                        archiveArtifacts allowEmptyArchive: true,
+                            artifacts:'**/Davidspetitions*.war'
+                    }
+                    }
     }
 }
