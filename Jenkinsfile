@@ -11,6 +11,13 @@ pipeline {
                 sh 'mvn clean install' // Use clean install instead of separate steps
             }
         }
+
+        stage('Package') {
+                    steps {
+                        sh 'mvn package'
+                    }
+                }
+
         stage('Exec') { // Capitalized 'Exec' for clarity
             steps {
                 script { // Use script block for better control
