@@ -9,11 +9,11 @@ import java.util.List;
 public class PetitionService {
     private List<Petition> petitions = new ArrayList<>();
 
-    public List<com.example.Davidspetitions.Petition> getAllPetitions() {
-        List<Petition> petitions = new ArrayList<>();
-        petitions.add(new Petition(1L, "Climate Change Petition", "Let's fight climate change together"));
-        petitions.add(new Petition(2L, "Animal Rights Petition", "Protect our furry friends"));
-        // ... add more petitions
+    public List<Petition> getAllPetitions() {
+        petitions.clear(); // Clear any existing petitions (optional)
+        petitions.add(new Petition(1L,"Save the Pandas!", "Description1"));
+        petitions.add(new Petition(2L,"Build a Dog Park!", "Description2"));
+        petitions.add(new Petition(3L,"More Funding for Schools!", "Description3"));
         return petitions;
     }
 

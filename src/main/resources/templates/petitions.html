@@ -21,7 +21,7 @@
   <ul>
     <li th:each="petition : ${petitions}">
       <a th:href="@{/petitions/{id}(id=${petition.getId()})}">
-        {{petition.title}}
+        <span th:text="${petition.title}"></span>
       </a>
     </li>
   </ul>

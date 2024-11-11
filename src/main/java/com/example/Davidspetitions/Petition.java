@@ -2,8 +2,8 @@ package com.example.Davidspetitions;
 
 public class Petition {
     private final Long id;
-    private String title;
-    private String description;
+    public String title;
+    public String description;
 
     public Petition(long l, String climateChangePetition, String s) {
         this.id = l;

@@ -22,6 +22,7 @@ public class PetitionsController {
     @GetMapping("/petitions")
     public String viewAllPetitions(Model model) {
         List<Petition> petitions = petitionService.getAllPetitions();
+        System.out.println("Number of petitions: " + petitions.size()); // Debug statement
         model.addAttribute("petitions", petitions);
         return "petitions";
     }
