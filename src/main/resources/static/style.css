@@ -36,6 +36,10 @@ main {
     padding: 20px;
 }
 
+div {
+  margin-bottom: 25px; /* Adjust the spacing as needed */
+}
+
 .button {
     background-color: #4CAF50; /* Green */
     border: none;
@@ -46,3 +50,4 @@ main {
     display: inline-block;
     font-size: 16px;
 }
+
