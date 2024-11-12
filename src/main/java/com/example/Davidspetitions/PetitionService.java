@@ -18,6 +18,7 @@ public class PetitionService {
     }
 
     public void addPetition(Petition petition) {
+        petitions.add(petition);
     }
 
     public List<Petition> getPetitions() {
