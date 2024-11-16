@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>petitions - Home</title>
+    <title>Thank You</title>
     <link th:href="@{/style.css}" rel="stylesheet" />
 </head>
 <body>
@@ -10,16 +10,14 @@
     <nav>
         <ul>
             <li><a href="http://13.51.121.75:8081/Davidspetitions/">Home</a></li>
-            <li><a th:href="@{/create-petition}">Start a Petition</a></li>
             <li><a th:href="@{/petitions}">View All Petitions</a></li>
-            <li><a th:href="@{/search}">Search Petitions</a></li>
         </ul>
     </nav>
 </header>
-
 <main>
-    <h1>Make a Change Today!</h1>
-    <a class="button" th:href="@{/create-petition}">Start a Petition</a>
+    <h1>Thank You!</h1>
+    <p>Your signature has been added successfully.</p>
+    <a th:href="@{/petitions}" class="button">View More Petitions</a>
 </main>
 </body>
 </html>

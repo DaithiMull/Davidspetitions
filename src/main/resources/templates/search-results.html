@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="UTF-8">
-  <title>petitions - All Petitions</title>
+  <title>Search Results</title>
   <link th:href="@{/style.css}" rel="stylesheet" />
 </head>
 <body>
@@ -19,11 +19,21 @@
 </header>
 
 <main>
-  <h1>All Petitions</h1>
+  <h1>Search Results</h1>
+  <p th:if="${#lists.isEmpty(petitions)}">No petitions found for "<span th:text="${keyword}"></span>"</p>
   <div th:each="petition : ${petitions}">
     <a th:href="@{/petitions/{id}(id=${petition.getId()})}">
       <span th:text="${petition.title}"></span>
     </a>
+  </div>
+
+  <div>
+
+    <form th:action="@{/search}" method="get">
+      <input type="text" name="keyword" placeholder="Search petitions..." />
+      <button type="submit">Search</button>
+    </form>
+
   </div>
 </main>
 </body>
