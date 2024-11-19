@@ -24,6 +24,14 @@ pipeline {
                 }
             }
         }
+        stage('Manual Approval') {
+            steps {
+                script {
+                    // Manual approval step
+                    input message: 'Approve deployment to production?', ok: 'Proceed'
+                }
+            }
+        }
         stage('Deploy') {
             steps {
                 sh 'docker build -f Dockerfile -t myapp .'
